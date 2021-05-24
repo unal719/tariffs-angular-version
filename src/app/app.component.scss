@@ -1,0 +1,24 @@
+.app-main-content {
+  flex-grow: 1;
+  // min-height: 2em;
+  max-width: 1180px;
+  margin: 64px auto;
+  width: 100%;
+  min-height: 728px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  .app-main-content {
+    max-width: unset;
+    margin: 16px;
+    width: unset;
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px) {
+  .app-main-content {
+    min-height: unset;
+    margin: 16px;
+    width: unset;
+  }
+}

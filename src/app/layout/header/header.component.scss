@@ -1,0 +1,37 @@
+@import "../../../assets/styles/config";
+
+#header-main {
+  width: 100%;
+  height: auto;
+  padding: 0 8px;
+  background-color: #acbfb9;
+  overflow: hidden;
+  .header-items {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1180px;
+    margin: 0 auto;
+    .header-item {
+      padding: 8px 8px 8px 0;
+
+      font-size: 16px;
+      a {
+        color: $light-color;
+      }
+
+      &.active {
+        border-bottom: 2px solid $main-color;
+        padding-bottom: 6px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px) {
+  #header-main {
+    .header-items {
+      max-width: 1080px;
+    }
+  }
+}

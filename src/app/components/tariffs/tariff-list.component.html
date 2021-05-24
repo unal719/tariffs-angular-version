@@ -1,0 +1,57 @@
+<section id="tariff-list-container">
+
+    <shared-list-sort [sortListItems]="listSortValues" (getSortConditions)="setSortCondisitons($event)">
+    </shared-list-sort>
+    <div class="tariff-box" *ngFor="let tariff of tariffList | listAscDescSort:sortKey:sortType">
+
+        <div class="left-id-column">
+            {{tariff.id}}
+        </div>
+        <p class="tariff-name">
+            {{tariff.name}}
+        </p>
+
+        <div class="tariff-content-column">
+            <div class="row-content">
+                <span class="content-text">Download</span>
+                <div class="content-value-row">
+                    <div class="logo">
+                        <i class="download"></i>
+                    </div>
+                    <div class="value-badge">
+                        {{tariff.download}}
+                    </div>
+                </div>
+            </div>
+            <div class="row-content upload">
+                <span class="content-text">Upload</span>
+                <div class="content-value-row">
+                    <div class="logo">
+                        <i class="upload"></i>
+                    </div>
+                    <div class="value-badge">
+                        {{tariff.upload}}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <ul class="tariff-benefits">
+            <li class="tariff-benefit-item" *ngFor="let benefit of tariff.benefits; let i=index">
+                {{benefit}}
+            </li>
+        </ul>
+
+        <div class="price-column">
+            <p class="tariff-price">
+                {{tariff.price}}
+            </p>
+            <button class="link-button">
+                <span class="link-button-text">
+                    To tariff
+                </span>
+                <i class="link-button-icon"></i>
+            </button>
+        </div>
+    </div>
+</section>

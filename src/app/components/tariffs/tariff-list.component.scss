@@ -1,0 +1,248 @@
+#tariff-list-container {
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  //   .tariffs-box-container {
+  .tariff-box {
+    border: 2px solid #f4f4f4;
+    border-radius: 4px;
+    // height: 128px;
+    color: #333;
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+
+    .left-id-column {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 4px;
+      border-right: 2px solid #ccc;
+      font-size: 14px;
+    }
+
+    .tariff-name {
+      padding: 24px 16px 0 16px;
+      font-size: 16px;
+      flex: 1;
+    }
+
+    .tariff-content-column {
+      display: flex;
+      padding: 24px 16px 0 16px;
+      flex-direction: column;
+      flex: 1;
+      .row-content {
+        display: flex;
+        flex-direction: column;
+        .content-text {
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+        .content-value-row {
+          display: flex;
+          align-items: center;
+          margin-bottom: 8px;
+          .logo {
+            height: 24px;
+            width: 36px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            .download {
+              width: 12px;
+              height: 12px;
+              background: url("../../../assets/logo/iconmonstr-arrow-up-thin.svg")
+                center center/cover no-repeat;
+            }
+            .upload {
+              width: 12px;
+              height: 12px;
+              background: url("../../../assets/logo/iconmonstr-arrow-down-thin.svg")
+                center center/cover no-repeat;
+            }
+          }
+          .value-badge {
+            height: 24px;
+            /* padding: 0 24px; */
+            border: 1px solid #ccc;
+            border-radius: 0 16px 16px 0;
+            display: flex;
+            align-items: center;
+            min-width: 60%;
+            justify-content: center;
+            &::after {
+              content: "Mbit/s";
+              margin-left: 4px;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+
+    .tariff-benefits {
+      padding: 24px 16px 0 16px;
+      font-size: 14px;
+      flex: 1;
+      .tariff-benefit-item {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 1px solid #d4d4d4;
+        margin-bottom: 4px;
+      }
+    }
+
+    .price-column {
+      padding: 24px 16px 0 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-start;
+      .tariff-price {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 8px;
+        &::after {
+          content: "€";
+          margin-left: 4px;
+        }
+      }
+
+      .link-button {
+        width: 100%;
+        padding: 8px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        cursor: pointer;
+        .link-button-text {
+          font-size: 14px;
+        }
+        .link-button-icon {
+          width: 16px;
+          height: 16px;
+          background: url("../../../assets/logo/iconmonstr-arrow-63.svg") center
+            center/cover no-repeat;
+        }
+      }
+    }
+  }
+  //   }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 680px) {
+  #tariff-list-container {
+    overflow: hidden;
+    padding: 8px;
+    .tariff-box {
+      .left-id-column {
+        border: none;
+        align-items: start;
+      }
+
+      .tariff-benefits {
+        display: none;
+      }
+
+      .tariff-name {
+        padding: 8px 4px 0 4px;
+      }
+
+      .tariff-content-column {
+        padding: 8px 4px 0 4px;
+        .row-content {
+          &.upload {
+            display: none;
+          }
+          .content-text {
+            display: none;
+          }
+          .content-value-row {
+            margin-bottom: 4px;
+            .logo {
+              border: none;
+              height: auto;
+              width: auto;
+            }
+            .value-badge {
+              border: none;
+              position: relative;
+              min-width: 40%;
+              &::after {
+                content: "Mbit/s";
+                margin-left: 0;
+                font-weight: bold;
+                position: absolute;
+                bottom: -85%;
+                left: -18%;
+              }
+            }
+          }
+        }
+      }
+
+      .price-column {
+        padding: 8px 4px 0 4px;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin-bottom: 4px;
+        .tariff-price {
+          font-size: 18px;
+          margin-bottom: 0;
+        }
+        .link-button {
+          height: 52px;
+          width: 16px;
+          .link-button-text {
+            display: none;
+          }
+          .link-button-icon {
+            height: 12px;
+            width: 12px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 720px) and (max-width: 1080px) {
+  #tariff-list-container {
+    overflow: hidden;
+    padding: 16px;
+    height: auto;
+    .tariff-box {
+      .left-id-column {
+        border: none;
+        align-items: unset;
+      }
+      .tariff-name {
+        padding: 20px 12px 0 12px;
+      }
+
+      .tariff-content-column {
+        padding: 20px 12px 0 12px;
+        .row-content {
+          display: flex;
+          flex-direction: column;
+          .content-text {
+            display: none;
+          }
+        }
+      }
+
+      .tariff-benefits {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<section id="list-sort-container">
+    <p class="title">Sort BY</p>
+    <ul class="sort-items">
+        <li class="sort-item" *ngFor="let item of sortListItems" [ngClass]="{'selected': selectedCondition===item}"
+            (click)="setSortCondition(item)">
+            <span class="sort-text">{{item | uppercase}}</span>
+            <i class="logo"
+                [ngClass]="{'asc':( selectedSortType==='asc' && selectedCondition===item),'desc':(selectedSortType==='desc' && selectedCondition===item)}"></i>
+        </li>
+
+
+    </ul>
+</section>

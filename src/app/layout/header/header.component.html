@@ -1,0 +1,10 @@
+<header id="header-main">
+    <ul class="header-items">
+        <li class="header-item" [ngClass]="{'active': checkActive('/')}">
+            <a href="javasciprt:void()" [routerLink]="['/']">Home</a>
+        </li>
+        <li class="header-item" [ngClass]="{'active': checkActive('/tariffs')}">
+            <a href="javasciprt:void()" [routerLink]="['/tariffs']">Tariffs</a>
+        </li>
+    </ul>
+</header>
